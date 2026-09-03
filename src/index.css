@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #FBF9FA;
+  --bg2: #F3EEF1;
+  --ink: #221A20;
+  --muted: #6E6069;
+  --rule: #E2D9DE;
+  --accent: #4B2440;
+  --accent-ink: #FBF9FA;
+  --accent-soft: #EFE3EA;
+  --warn: #8A4B12;
+}
+
+[data-theme="dark"] {
+  --bg: #17121A;
+  --bg2: #1F1822;
+  --ink: #EEE6EA;
+  --muted: #A99DA5;
+  --rule: #33293A;
+  --accent: #CFA5C1;
+  --accent-ink: #17121A;
+  --accent-soft: #2A1F2C;
+  --warn: #E0A265;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #17121A;
+    --bg2: #1F1822;
+    --ink: #EEE6EA;
+    --muted: #A99DA5;
+    --rule: #33293A;
+    --accent: #CFA5C1;
+    --accent-ink: #17121A;
+    --accent-soft: #2A1F2C;
+    --warn: #E0A265;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+/* Custom Print styles for 1-page Negotiation Card */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #111827 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .negotiation-card-container {
+    box-shadow: none !important;
+    border: 1px solid #d1d5db !important;
+    page-break-inside: avoid;
+  }
+}
+
+/* Tabular numbers for financial metrics */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom range slider styling */
+input[type="range"] {
+  accent-color: var(--accent);
+}
