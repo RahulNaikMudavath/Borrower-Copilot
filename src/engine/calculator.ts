@@ -304,7 +304,7 @@ export function evaluateBorrowerProfile(inputs: BorrowerInputs): CalculatedOutpu
   if (
     (pastEmiBouncesLast12M >= 1 && existingHighCostLoanOutstanding > 20000) ||
     (currentDtiPct > 65) ||
-    (borrowerSafeMonthlyEmi <= 0 && loanTypeWanted !== 'debt_consolidation') ||
+    (borrowerSafeMonthlyEmi <= 0 && purpose !== 'debt_consolidation') ||
     (employmentType === 'informal' && existingHighCostLoanOutstanding > 0 && pastEmiBouncesLast12M > 0 && loanTypeWanted === 'personal')
   ) {
     verdict = 'DONT_BORROW';
