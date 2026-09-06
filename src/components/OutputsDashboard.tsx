@@ -45,8 +45,12 @@ export const OutputsDashboard: React.FC<OutputsDashboardProps> = ({ outputs, req
           </button>
         </div>
 
-        <div className="text-xs text-muted font-mono hidden sm:block">
-          Evaluated in <b>&lt; 5ms</b> locally
+        <div className="flex items-center gap-2 text-xs font-mono text-muted">
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 text-[11px] font-semibold">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Live Calculation Active</span>
+          </span>
+          <span className="hidden sm:inline">· &lt; 5ms local execution</span>
         </div>
       </div>
 
